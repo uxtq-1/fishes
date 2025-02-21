@@ -1,0 +1,63 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(135deg, #e6e6fa, #d8bfff);
+  font-family: monospace;
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+}
+
+#message {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  color: black;
+  border-right: 3px solid black;
+  transition: color 0.5s ease-in-out;
+}
+
+.blink {
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+#advance {
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 10px 20px;
+  border: 2px solid lavender;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s;
+  animation: pulse 1.5s infinite ease-in-out;
+  margin: 10px;
+}
+
+#advance:hover {
+  background: rgba(230, 230, 250, 0.2);
+}
